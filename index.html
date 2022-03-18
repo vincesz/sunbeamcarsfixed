@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SunbeamCars Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <section class="layout">
+
+    <p class="logo"><a href="index.html">SunbeamCars Inc.</p></a>
+
+    <ul class="login"><a href="#"> <img class="loginpic" src="images/login.png">Login</a></ul>
+    <ul class="login"><a href="aboutus.html"> About us</a></ul>
+
+  </section>
+
+  <section class="hero">
+
+    <div class="container">
+      <img src="images/hero2.jpg" alt="Nature" style="width:100%;">
+      <div class="text-block">
+        <h4>Find the car that suits you</h4>
+        <label for="start" class="marg">I pick it up:</label>
+        <label for="end">I hand it in:</label>
+        <br>
+
+        <input type="date" id="start" name="trip-start" value="2022-02-01" min="2022-02-01" max="2024-12-31">
+
+        <input type="date" id="end" name="trip-end" value="2022-02-01" min="2022-02-01" max="2024-12-31">
+
+        <br>
+
+        <label for="person" class="marg">Number of persons:</label>
+        <label for="suitcase">Number of suitcases:</label>
+
+        <br>
+
+        <input type="quantity" id="person" name="person-number" value="1" min="1" max="7">
+
+        <label for="suitcase"></label>
+        <select id="suitcase" name="suitcaselist" form="suitcaseform">
+          <option value="0">0 - only a bag</option>
+          <option value="1">1 suitcase</option>
+          <option value="2">2 suitcases</option>
+          <option value="3">3 suitcases</option>
+          <option value="4">4 suitcases</option>
+        </select>
+
+        <br>
+
+        <button type="button" class="searchbutton" onclick="ButtonClickHandler()">Search</button>
+
+      </div>
+    </div>
+
+
+  </section>
+  <!---
+  <section class="cars">
+
+    <div class="car1">
+      <img src="images/suzuki.png">
+      <h4>Suzuki Swift</h4>
+      <p>Category: Budget <br>Persons: 4 <br>Suitcases: 1</p>
+      <div class="price">
+        <h4>DKK850,00</h4>
+        <button>Book now</button>
+      </div>
+    </div>
+
+    <div class="car1">
+      <img src="images/mazda.png" width="23%">
+      <h4>Mazda 3</h4>
+      <p id="cat2">Category: Standard <br>Persons: 5 <br>Suitcases: 3</p>
+      <div class="price2">
+        <h4>DKK1170,00</h4>
+        <button>Book now</button>
+      </div>
+    </div>
+
+    <div class="car1">
+      <img src="images/citroen.png" width="23%">
+      <h4>Citröen Grand C4<br>Picasso</h4>
+      <p id="cat3">Category: Minivan <br>Persons: 7 <br>Suitcases: 4</p>
+      <div class="price">
+        <h4>DKK1420,00</h4>
+        <button>Book now</button>
+      </div>
+    </div>
+
+  </section>
+--->
+  <div id="output"></div>
+
+  <script src="data.js"></script>
+  <script src="javascript.js"></script>
+
+</body>
+
+</html>

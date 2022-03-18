@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SunbeamCars Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <section class="layout">
+
+    <p class="logo"><a href="index.html">SunbeamCars Inc.</p></a>
+
+    <ul class="login"><a href="#"> <img class="loginpic" src="images/login.png">Login</a></ul>
+    <ul class="login"><a href="aboutus.html"> About us</a></ul>
+
+  </section>
+
+  <section class="hero">
+
+    <div class="container">
+      <img src="images/hero2.jpg" alt="Nature" style="width:100%;">
+      <div class="text-block">
+        <h4>Find the car that suits you</h4>
+      
+      </div>
+    </div>
+
+
+  </section>
+  <div class="details">
+    <form>
+      <form action="receipt.html">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=" "><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=" "><br><br>
+        <label for="lname">Street name:</label><br>
+        <input type="text" id="street" name="street" value=" "><br><br>
+        <label for="lname">Number / floor:</label><br>
+        <input type="text" id="numberfloor" name="numberfloor" value=" "><br><br>
+        <label for="lname">Postal code & City:</label><br>
+        <input type="text" id="postcode" name="postcode" value=" "><br><br>
+        <input type="checkbox" id="over18" name="over18" value="Yes">
+        <label for="vehicle1"> I am over 18 years of age</label><br>
+        <button id="confirmdat"><a href="receipt.html">Confirm booking</a></button>
+      </form> 
+    </form>
+  <div id="output5"></div>
+  <script>
+      const output=document.getElementById("output5");
+
+      const booking = JSON.parse(sessionStorage.getItem("booking"));
+
+  
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Car name: </p>${booking.carname}<br>`);
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Pickup date:</p> ${booking.pickup}<br>`);
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Return date:</p> ${booking.returndate}<br>`);
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Rental date:</p> ${booking.days}<br>`);
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Total car rental cost:</p> ${booking.price}<br>`);
+      output.insertAdjacentHTML("beforeend", `<img src="${booking.image}" width="30%"><br><br>`);
+
+
+      // Get shopping list from sesstionstorage
+      const shoppinglist = JSON.parse(sessionStorage.getItem("goods"));
+
+      // Show every item on shopping list to user
+      for (const item of shoppinglist) {
+          output.insertAdjacentHTML("beforeend", `${item}<br>`);
+      }
+
+      // Get and show total value to user
+      output.insertAdjacentHTML("beforeend", `<br><p class="pbold">Total ${sessionStorage.getItem("total")}</p>`);
+      
+
+  </script>
+  <script src="data.js"></script>
+  <script src="javascript.js"></script>
+</div>
+</body>
+
+</html>

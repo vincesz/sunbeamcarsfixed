@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SunbeamCars Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <section class="layout">
+
+    <p class="logo"><a href="index.html">SunbeamCars Inc.</p></a>
+
+    <ul class="login"><a href="#"> <img class="loginpic" src="images/login.png">Login</a></ul>
+    <ul class="login"><a href="aboutus.html"> About us</a></ul>
+
+  </section>
+
+  <section class="hero">
+
+    <div class="container">
+      <img src="images/hero2.jpg" alt="Nature" style="width:100%;">
+      <div class="text-block">
+        <h4>Find the car that suits you</h4>
+
+      </div>
+    </div>
+
+
+  </section>
+  <div class="details">
+  <div id="output"></div>
+  <form id="form">
+    
+      <legend>Select accessories (excl. VAT)</legend>
+      <br>
+      <input type="checkbox" data-item="Second driver" class="slist" value="199.00"
+        onchange="calculateTotal(this, this.value)">Second driver, dkr. 199,00<br>
+      <input type="checkbox" data-item="Child seat" class="slist" value="155.00"
+        onchange="calculateTotal(this, this.value)">Child seat, dkr. 155,00<br>
+      <input type="checkbox" data-item="Roadside Aid" class="slist" value="120.00"
+        onchange="calculateTotal(this, this.value)">Roadside Aid, dkr. 120,00<br>
+      <input type="checkbox" data-item="Baby seat" class="slist" value="100.00"
+        onchange="calculateTotal(this, this.value)">Baby seat (0-1 year), dkr. 100,00<br>
+      <br>
+      <div id="totaloutput"></div>
+      <br>
+      <button type="submit" class="continueinfo">Continue</button>
+    
+  </form>
+</div>
+
+  <script>
+    const url = window.location.search;
+    const urldata = new URLSearchParams(url);
+
+    const template = `
+    <div class="details2">
+    <p class="pbold">Car name: </p><p>${urldata.get('carname')}</p>
+    <p class="pbold">Pickup date: </p><p>${urldata.get('pickup')}</p>
+    <p class="pbold">Return date: </p><p>${urldata.get('returndate')}</p>
+    <p class="pbold">Rental days: </p><p>${urldata.get('days')}</p>
+    <p class="pbold">Car rental cost: </p><p class="pbold2">${urldata.get('price')} dkr.</p>
+    <p>incl. VAT</p>
+    <img src="${urldata.get('image')}" alt="Photo of ${urldata.get('firstname')}" style="width: 150px">
+    </div>
+    `
+
+   let booking = {
+     carname : urldata.get('carname'),
+     pickup : urldata.get('pickup'),
+     returndate : urldata.get('returndate'),
+     days : urldata.get('days'),
+     price : urldata.get('price'),
+     image : urldata.get('image')
+   }
+
+
+
+    const output = document.getElementById("output");
+    output.insertAdjacentHTML("beforeend", template);
+
+    let total = parseFloat(urldata.get('price')); // Global variable, total starts at zero
+    showTotal(); // Calls function showTotal to show current total
+
+    // Event handler - check if checkbox is selected or not and 
+    // adjust the total value accordingly
+    function calculateTotal(checkbox, itemprice) {
+      if (checkbox.checked === true) { // If the checkbox is seleted then ...
+        total = Math.abs(total + parseFloat(itemprice));
+      } else { // if it is not selected then ...
+        total = Math.abs(total - parseFloat(itemprice));
+      }
+      showTotal();
+    }
+
+    // Shows total value on screen
+    function showTotal() {
+      const output = document.getElementById("totaloutput");
+      output.innerText = `All inclusive: ${total.toLocaleString("da-DK", {style: "currency", currency: "DKK"})} incl. VAT`;
+    }
+
+    //FINANCE RECEIPT
+    const form = document.getElementById("form");
+    form.reset(); // Resets form every time page loads
+
+    const checkboxes = document.getElementsByClassName("slist"); //Build an object list with checkboxes
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      let shoppinglist = []; // Define shopping list
+      for (const checkbox of checkboxes) {
+        if (checkbox.checked === true) { // If the item is selected ...
+          shoppinglist.push(checkbox.dataset.item + "(dkr. " + checkbox.value + ")"); // add it to the shopping list.
+        }
+      }
+
+      // Stores information in sessionstorage
+      sessionStorage.setItem("goods", JSON.stringify(shoppinglist));
+      sessionStorage.setItem("total", total.toLocaleString("da-DK", {
+        style: "currency",
+        currency: "DKK"
+      }));
+      sessionStorage.setItem("booking", JSON.stringify(booking));
+
+      location.href = "information.html"; // Redirect user to page2.html
+    })
+  </script>
+  <script src="data.js"></script>
+  <script src="javascript.js"></script>
+
+</body>
+
+</html>

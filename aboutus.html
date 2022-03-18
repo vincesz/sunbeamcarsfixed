@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SunbeamCars Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <section class="layout">
+
+    <p class="logo"><a href="index.html">SunbeamCars Inc.</p></a>
+
+    <ul class="login"><a href="#"> <img class="loginpic" src="images/login.png">Login</a></ul>
+    <ul class="login"><a href="aboutus.html"> About us</a></ul>
+
+  </section>
+
+  <section class="hero">
+    <div class="container">
+      <h3>ABOUT US</h3>
+
+      <video id="myVideo" width="60%" autoplay muted loop>
+        <source src="images/video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+
+
+      <h3>Who are we?</h3>
+
+      <p>We are one of the biggest car rental companies in Denmark in operation since 2014.</p>
+      <p>We always try to offer the best deals and highest quality services possible.</p>
+      <p>Throughout our journey we always aimed to be the best in the industry and solve every need for our customers.
+      </p>
+      <p>Curious how big our company is?</p>
+
+
+      <h3>Number of rentable cars</h3>
+      <div class="numbers">
+        <span class="numbers__window">
+          <span class="numbers__window__digit numbers__window__digit--1" data-fake="8642519073">1</span>
+        </span>
+        <span class="numbers__window">
+          <span class="numbers__window__digit numbers__window__digit--2" data-fake="5207186394">1</span>
+        </span>
+        <span class="numbers__window">
+          <span class="numbers__window__digit numbers__window__digit--3" data-fake="8395216407">2</span>
+        </span>
+      </div>
+
+      <p>Our rentable cars range all the way from minivans to luxury cars. Wheter you are looking for a cheap solution
+        for the weekend or have to appear professional somewhere SunbeamCars got you all covered!</p>
+      <h3>Cities we currently operate in</h3>
+
+      <style>
+        .accordion {
+          background-color: #eee;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          text-align: left;
+          border: none;
+          outline: none;
+          transition: 0.4s;
+        }
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        .active,
+        .accordion:hover {
+          background-color: #ccc;
+        }
+
+        /* Style the accordion panel. Note: hidden by default */
+        .panel {
+          padding: 0 18px;
+          background-color: white;
+          display: none;
+          overflow: hidden;
+        }
+
+        .containeracc {
+          width: 50%;
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .containeracc > button {
+          text-align: center;
+          font-size: 20px;
+          margin-top: 10px;
+        }
+        
+      </style>
+      </head>
+
+      <body>
+
+        <div class=containeracc>
+          <button class="accordion">Copenhagen</button>
+          <div class="panel">
+            <p>To see more information about our departement in the capital <a href="#">click here</a></p>
+          </div>
+
+          <button class="accordion">Aarhus</button>
+          <div class="panel">
+            <p>To see more information about our departement in Aarhus <a href="#">click here</a></p>
+          </div>
+
+          <button class="accordion">Odense</button>
+          <div class="panel">
+            <p>To see more information about our departement in Odense <a href="#">click here</a></p>
+          </div>
+
+          <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function () {
+                /* Toggle between adding and removing the "active" class,
+                to highlight the button that controls the panel */
+                this.classList.toggle("active");
+
+                /* Toggle between hiding and showing the active panel */
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                  panel.style.display = "none";
+                } else {
+                  panel.style.display = "block";
+                }
+              });
+            }
+          </script>
+          </div>
+
+          <h3>Have a question for us?</h3>
+
+          <img src="images/customersupport.jpg" width="30%" alt="Customer support">
+
+          <style>
+            body {
+              font-family: Arial, Helvetica, sans-serif;
+            }
+
+            * {
+              box-sizing: border-box;
+            }
+
+            .formy>input[type=text],
+            select,
+            textarea {
+              width: 100%;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              margin-top: 6px;
+              margin-bottom: 16px;
+              resize: vertical;
+            }
+
+            .formy>input[type=submit] {
+              background-color: #04AA6D;
+              color: white;
+              padding: 12px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              margin-top: 15px;
+            }
+
+            .formy>input[type=submit]:hover {
+              background-color: #45a049;
+            }
+
+            .container10 {
+              border-radius: 5px;
+              background-color: #f2f2f2;
+              padding: 20px;
+              width: 60%;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 15px;
+            }
+          </style>
+          </head>
+
+          <body>
+
+            <p>We are here to help!</p>
+
+            <div class="container10">
+              <form action="/action_page.php">
+                <label for="fname">First Name</label>
+                <input class="formy" type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <label for="lname">Last Name</label>
+                <input class="formy" type="text" id="lname" name="lastname" placeholder="Your last name.."><br><br>
+
+                <label for="country">Location</label>
+                <select id="country" name="country">
+                  <option value="australia">Copenhagen</option>
+                  <option value="canada">Aarhus</option>
+                  <option value="usa">Odense</option>
+                </select>
+
+                <label for="subject">Subject</label><br>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <input class="formy" type="submit" value="Submit">
+              </form>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+
+  </section>
+  <!---
+  <section class="cars">
+
+    <div class="car1">
+      <img src="images/suzuki.png">
+      <h4>Suzuki Swift</h4>
+      <p>Category: Budget <br>Persons: 4 <br>Suitcases: 1</p>
+      <div class="price">
+        <h4>DKK850,00</h4>
+        <button>Book now</button>
+      </div>
+    </div>
+
+    <div class="car1">
+      <img src="images/mazda.png" width="23%">
+      <h4>Mazda 3</h4>
+      <p id="cat2">Category: Standard <br>Persons: 5 <br>Suitcases: 3</p>
+      <div class="price2">
+        <h4>DKK1170,00</h4>
+        <button>Book now</button>
+      </div>
+    </div>
+
+    <div class="car1">
+      <img src="images/citroen.png" width="23%">
+      <h4>Citröen Grand C4<br>Picasso</h4>
+      <p id="cat3">Category: Minivan <br>Persons: 7 <br>Suitcases: 4</p>
+      <div class="price">
+        <h4>DKK1420,00</h4>
+        <button>Book now</button>
+      </div>
+    </div>
+
+  </section>
+--->
+  <div id="output"></div>
+
+  <script src="data.js"></script>
+  <script src="javascript.js"></script>
+
+</body>
+
+</html>

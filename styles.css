@@ -1,0 +1,360 @@
+* { margin: 0; padding: 0; }
+
+.logo {
+    display: block;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 26pt;
+    margin: 20pt;
+    text-decoration: none;
+}
+
+.logo > a {
+    text-decoration: none;
+    color: black;
+}
+
+.login {
+    display: block;
+    float: right;
+    margin: 20pt;
+}
+
+.login > a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 18pt;
+}
+
+.loginpic {
+    width: 22px;
+    margin-right: 10pt;
+}
+
+.heroimage {
+    width: 1100px;
+    display: block;
+    justify-content: center;
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero {
+    position: relative;
+    font-family: Arial;
+    justify-self: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero > h3 {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.layout {
+    height: 100px;
+}
+
+.container {
+    position: relative;
+    font-family: Arial;
+    justify-self: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+    text-align: center;
+  }
+
+  .container > h3{
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .container > p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
+  }
+  
+  .text-block {
+    position: absolute;
+    bottom: 500px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.685);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+  }
+
+  .text-block > label {
+      padding: 15px;
+  }
+
+  .text-block > input {
+      padding: 3px;
+  }
+
+  .text-block > h4 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .marg {
+      margin: 5px;
+  }
+
+  .searchbutton {
+      font-size: 18px;
+      margin-top: 15px;
+      margin-bottom: 8px;
+  }
+
+  /*----------------- CAR BOX ONE -----------*/
+
+  .car1 {
+      height: 150px;
+      width: 1100px;
+      background-color: rgba(179, 175, 172, 0.336);
+      border: 2px solid rgba(0, 0, 0, 0.685);
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .car1 > img {
+    margin-left: 15px;
+  }
+
+  .car1 > h4 {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 30px;
+      font-size: 32px;
+  }
+
+  .car1 > p {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 170px;
+  }
+
+  .car1 > .price {
+      font-size: 22px;
+      margin-left: 100px;
+      margin-top: auto;
+      margin-bottom: auto;
+  }
+
+  .car1 > .price > button {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: auto;
+    color: green;
+}
+
+/* --- car 2 --- */
+
+.car1 > .price2 {
+    font-size: 22px;
+    margin-left: 89px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.car1 > .price2 > button {
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: auto;
+  color: green;
+}
+
+.car1 > #cat2 {
+    margin-left: 233px;
+}
+
+.car1 > #cat3 {
+    margin-left: 90px;
+}
+
+label.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.details {
+        width: 1100px;
+        background-color: rgba(179, 175, 172, 0.336);
+        border: 2px solid rgba(0, 0, 0, 0.685);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        font-family: Arial, Helvetica, sans-serif;
+}
+
+.details > form {
+    font-size: 22px;
+}
+
+#confirmdat {
+    font-size: 22px;
+    background-color: greenyellow;
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+#confirmdat > a {
+    text-decoration: none;
+    color: black;
+}
+
+.detailsprint {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detailsprint > button {
+    margin-top: 15px;
+    width: 30%;
+    margin-left: 200px;
+    background-color: greenyellow;
+    font-size: 24px;
+}
+
+#output5 {
+    margin-left: 400px;
+    font-size: 20px;
+}
+
+.confirm {
+    font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+#myvideo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#totaloutput {
+    font-weight: bold;
+    border: 2px solid red;
+}
+
+.continueinfo {
+    font-size: 24px;
+    background-color: azure;
+}
+
+.details > form {
+    margin-right: auto;
+    margin-left: 150px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.details2 {
+    width: 300px;
+    margin-left: 20px;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pbold {
+    font-weight: bold;
+}
+
+.pbold2 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.detailsbox {
+    display: flex;
+}
+
+.numbers {
+    font-family: 'Arial', sans-serif;
+    font-size: 150px;
+    line-height: 1em;
+    text-align: center;
+    margin: 40px auto;
+    overflow: hidden;
+  }
+
+  .numbers__window {
+    display: inline-block;
+    overflow: hidden;
+    width: 0.5em;
+    height: 1em;
+  }
+
+  .numbers__window__digit {
+    font: inherit;
+    word-break: break-all;
+    display: block;
+    width: 0;
+    padding: 0 0.52em 0 0;
+    margin: 0 auto;
+    overflow: inherit;
+    animation: counting 0.4s steps(10) forwards infinite;
+  }
+
+  .numbers__window__digit::before {
+    content: attr(data-fake);
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+
+
+
+  @keyframes counting {
+    100% {
+      transform: translate3d(0, -10em, 0);
+    }
+  }
+
+  .numbers__window__digit--1 {
+    animation-iteration-count: 2;
+  }
+  .numbers__window__digit--2 {
+    animation-iteration-count: 2;
+  }
+  .numbers__window__digit--3 {
+    animation-iteration-count: 2;
+  }
+  .numbers__window__digit--4 {
+    animation-iteration-count: 2;
+  }
+  .numbers__window__digit--5 {
+    animation-iteration-count: 2;
+  }

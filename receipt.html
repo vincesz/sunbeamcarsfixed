@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SunbeamCars Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <section class="layout">
+
+    <p class="logo"><a href="index.html">SunbeamCars Inc.</p></a>
+
+    <ul class="login"><a href="#"> <img class="loginpic" src="images/login.png">Login</a></ul>
+    <ul class="login"><a href="aboutus.html"> About us</a></ul>
+
+  </section>
+
+  <section class="hero">
+
+    <div class="container">
+      <img src="images/hero2.jpg" alt="Nature" style="width:100%;">
+      <div class="text-block">
+        <h4>Thank you for choosing us!</h4>
+      
+      </div>
+    </div>
+
+
+  </section>
+  <div class="details">
+    <form>
+      <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <label for="fname">Last name:</label><br>
+        <label for="fname">Street name:</label><br>
+        <label for="fname">No. / Floor:</label><br>
+        <label for="fname">Postal code:</label><br>
+      </form> 
+    </form>
+  <div id="output5"></div>
+  <script>
+      const output=document.getElementById("output5");
+
+      const booking = JSON.parse(sessionStorage.getItem("booking"));
+
+  
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Car name: </p>${booking.carname}<br>`);
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Pickup date:</p> ${booking.pickup}<br>`);
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Return date:</p> ${booking.returndate}<br>`);
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Rental date:</p> ${booking.days}<br>`);
+      output.insertAdjacentHTML("beforeend", `<p class=pbold>Total car rental cost:</p> ${booking.price}<br>`);
+      output.insertAdjacentHTML("beforeend", `<img src="${booking.image}" width="30%"><br><br>`);
+
+
+      // Get shopping list from sesstionstorage
+      const shoppinglist = JSON.parse(sessionStorage.getItem("goods"));
+
+      // Show every item on shopping list to user
+      for (const item of shoppinglist) {
+          output.insertAdjacentHTML("beforeend", `${item}<br>`);
+      }
+
+      // Get and show total value to user
+      output.insertAdjacentHTML("beforeend", `<br><p class="pbold">Total ${sessionStorage.getItem("total")}</p>`);
+      
+
+  </script>
+  <script src="data.js"></script>
+  <script src="javascript.js"></script>
+</div>
+<div class="details">
+  <div class="detailsprint">
+<h3>Thank you for your reservation, we will have the car ready for you!</h3>
+<button>Print</button>
+</div>
+</div>
+</body>
+
+</html>
